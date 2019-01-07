@@ -85,6 +85,9 @@
                     <a class="warning button">Share</a>
                     <a class="alert button">Delete</a>
                 </div>
+                <div>
+                    <img src="{{ asset('img/brands.jpg') }}" alt=""/>
+                </div>
             </div>
         </div>
         <script src="js/app.js"></script>

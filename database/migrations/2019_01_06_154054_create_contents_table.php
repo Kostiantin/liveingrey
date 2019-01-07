@@ -18,7 +18,7 @@ class CreateContentsTable extends Migration
             $table->integer('user_id');
             $table->integer('section_id');
             $table->string('label');
-            $table->string('text_ref');
+            $table->string('text_ref')->unique();
             $table->text('content');
             $table->timestamps();
         });

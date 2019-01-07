@@ -7607,13 +7607,17 @@ html.is-reveal-open body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.5rem;
+  padding: 20px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
 .top-bar,
 .top-bar ul {
+  background-color: #fff;
+}
+
+.top-bar ul ul {
   background-color: #e6e6e6;
 }
 
@@ -8235,9 +8239,75 @@ html.is-reveal-open body {
   }
 }
 
-.navbar-laravel {
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+#responsive-menu ul {
+  width: 100%;
+}
+
+#responsive-menu ul li {
+  width: 33%;
+  text-align: center;
+  float: left;
+}
+
+#responsive-menu ul li.social-icons-container {
+  padding-top: 15px;
+}
+
+#responsive-menu ul li.social-icons-container a {
+  display: inline;
+  padding-right: 20px;
+  height: 28px;
+  color: #ff7357;
+}
+
+#responsive-menu ul li.social-icons-container a:last-child {
+  padding-right: 0px;
+}
+
+#responsive-menu ul li.social-icons-container a i.fa {
+  font-size: 22px;
+}
+
+.sign-up-button-container {
+  padding-top: 12px;
+}
+
+.sign-up-button-container a {
+  color: #ff7357;
+  display: inline;
+  width: auto;
+  padding: 8px 15px;
+  border: 1px solid #ff7357;
+  font-size: 13px;
+}
+
+.top-slogan-container {
+  background-color: #ff7357;
+  padding: 140px;
+}
+
+.top-slogan-container {
+  color: #fff;
+  background-color: #ff7357;
+  text-align: center;
+}
+
+.main-slogan {
+  margin-top: 30px;
+  margin-bottom: 25px;
+  font-size: 25px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sub-slogan {
+  margin-top: 25px;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: Helvetica, Arial, sans-serif;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
