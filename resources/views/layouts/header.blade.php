@@ -32,15 +32,3 @@
         </ul>
     </div>
 </div>
-
-<!-- Main Slogan Section -->
-<div class="callout top-slogan-container">
-    <div class="grid-container">
-        <div class="main-slogan">
-            {{$content['we_create_authentic']}}
-        </div>
-        <div class="sub-slogan">
-            {{$content['live_grey_tag']}}
-        </div>
-    </div>
-</div>

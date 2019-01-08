@@ -34,10 +34,8 @@ class ContentsTableSeeder extends Seeder
         4 => [
             'section_id' => '1',
             'text_ref' => 'article_text',
-            'content' => 'We had an inspiring group join us for our Life@Work Culture Conference in July 2016. Business and culture thought leaders connected deeply through thought-provoking discussions and community activities in the beautiful Hudson Valley.
-
-Didn\'t make it this year? Email us directly at info@lifeatwork.co to request an invite for 2017. You can also get a taste of the two-day
-hands-on learning experience by checking out the photos, and sign up for our newsletter to stay in the loop.',
+            'content' => '<p>We had an inspiring group join us for our Life@Work Culture Conference in July 2016. Business and culture thought leaders connected deeply through thought-provoking discussions and community activities in the beautiful Hudson Valley.</p><p>Didn\'t make it this year? Email us directly at info@lifeatwork.co to request an invite for 2017. You can also get a taste of the two-day
+hands-on learning experience by checking out the photos, and sign up for our newsletter to stay in the loop.</p>',
             'label' => 'Main article text',
     ],
         5 => [
