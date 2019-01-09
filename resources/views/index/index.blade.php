@@ -108,8 +108,10 @@
         </div>
     </div>
 
-    <!-- Footer Section -->
+    <!-- Footer Sections -->
     <footer>
+
+        <!-- Brands -->
         <div class="footer-section-1">
             <div class="grid-container">
                 <div class="grid-x">
@@ -118,7 +120,136 @@
                             {{$content['who_we_worked_with']}}
                         </h3>
                     </div>
+                    <div class="cell small-12 middle-12 large-12">
+                        <div class="brands-container">
+                            <ul>
+                                <li class="iex">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="glint">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="pepsi">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="mkg">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="mls">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="lulu">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="johnson">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="warby">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="madison">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="greatist">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="rich-talent-group">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="do-something">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="charlie-rose">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="sumail">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="we-work">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="timeshop">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                                <li class="poppin">
+                                    <a href="#" class="brands "></a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Work With Us -->
+        <div class="footer-section-2">
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div class="cell small-12 middle-12 large-12 text-center">
+                        <h3 class="text-center">
+                            {{$content['work_with_us']}}
+                        </h3>
+                        <h4>
+                            {{stripslashes($content['curious_text'])}}
+                        </h4>
+                    </div>
+                </div>
+                <form>
+                    <div class="grid-x">
+                        <fieldset class="large-6 cell">
+
+                            <input type="text" placeholder="Name">
+                            <input type="text" placeholder="Title">
+                            <input type="text" placeholder="Email">
+                            <input type="text" placeholder="Company Website">
+
+                        </fieldset>
+                        <fieldset class="large-6 cell">
+                            <select name="area">
+                                <option value="">CULTURE INTEREST AREA</option>
+                                <option value="1">BUSINESS</option>
+                                <option value="2">AFFILIATE PROGRAM</option>
+                                <option value="3">FRIENDSHIP</option>
+                            </select>
+                            <select name="how-you-find-us">
+                                <option value="">HOW DID YOU FIND US</option>
+                                <option value="1">GOOGLE</option>
+                                <option value="2">SOME ONE TOLD YOU</option>
+                                <option value="3">SOCIAL NETWORKS</option>
+                            </select>
+                            <div class="bottom-check-box-container">
+                                <input id="sign-me-up" type="checkbox" name="sign-me-up"><label class="special-checkbox-label" for="sign-me-up">YES, SIGN ME UP FOR UPDATES</label>
+                                <input type="submit" class="float-right" value="SEND" onclick="return false;"/>
+                            </div>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer Section 3 -->
+        <div class="footer-section-3">
+            <div class="grid-container">
+
+                <ul>
+                    <li class="sign-up-button-container">
+                        <a href="#">
+                            SIGN UP FOR OUR NEWSLETTER
+                        </a>
+                    </li>
+                    <li class="social-icons-container">
+                        <a href="#"><i aria-hidden="true" class="fa fa-facebook"></i></a>
+                        <a href="#"><i aria-hidden="true" class="fa fa-instagram"></i></a>
+                        <a href="#"><i aria-hidden="true" class="fa fa-twitter"></i></a>
+                        <a href="#"><i aria-hidden="true" class="fa fa-linkedin"></i></a>
+                        <a href="#"><i aria-hidden="true" class="fa fa-pinterest-p"></i></a>
+                    </li>
+                    <li>
+                        <span>{!!$content['footer_slogan']!!}</span> | <span>{{$content['design_by']}}</span>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </footer>

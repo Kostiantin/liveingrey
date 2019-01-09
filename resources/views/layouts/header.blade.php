@@ -12,19 +12,19 @@
 <div class="top-bar" id="responsive-menu">
 
         <ul class="menu">
-            <li class="social-icons-container">
+            <li class="social-icons-container text-left">
                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
             </li>
-            <li class="logo-container">
+            <li class="logo-container text-center">
                 <a href="#">
                     <img src="{{ asset('img/logo.jpg') }}" alt=""/>
                 </a>
             </li>
-            <li class="sign-up-button-container">
+            <li class="sign-up-button-container text-right">
                 <a href="#">
                     {{$content['sign_up_for_our_newsletter']}}
                 </a>
