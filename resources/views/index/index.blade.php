@@ -22,7 +22,7 @@
         <div class="grid-container">
             <div class="grid-x">
                 <div class="cell small-12 middle-6 large-6">
-                    <a href="#">
+                    <a href="#" class="article-image-link">
                         <img class="article-image" src="{{ asset('img/article_image.jpg') }}" alt=""/>
                     </a>
                 </div>
@@ -50,7 +50,9 @@
                 </div>
                 <div class="cell small-12 middle-4 large-4 left-cell">
                     <div class="colored-sub-header">
-                        {{$content['values_work']}}
+                        <div class="sub-header-text-holder">
+                            {{$content['values_work']}}
+                        </div>
                     </div>
                     <div class="arrow-down-image-holder">
                         <img class="article-image" src="{{ asset('img/red_down_subtle.png') }}" alt=""/>
@@ -62,7 +64,9 @@
                 </div>
                 <div class="cell small-12 middle-4 large-4 center-cell">
                     <div class="colored-sub-header">
-                        {{$content['keep_it_real']}}
+                        <div class="sub-header-text-holder">
+                            {{$content['keep_it_real']}}
+                        </div>
                     </div>
                     <div class="arrow-down-image-holder">
                         <img class="article-image" src="{{ asset('img/green_down_subtle.png') }}" alt=""/>
@@ -75,7 +79,9 @@
                 </div>
                 <div class="cell small-12 middle-4 large-4 right-cell">
                     <div class="colored-sub-header">
-                        {{$content['on_purpose']}}
+                        <div class="sub-header-text-holder">
+                            {{$content['on_purpose']}}
+                        </div>
                     </div>
                     <div class="arrow-down-image-holder">
                         <img class="article-image" src="{{ asset('img/orange_down_subtle.png') }}" alt=""/>

@@ -28,13 +28,13 @@ class ContentsTableSeeder extends Seeder
         3 => [
             'section_id' => '1',
             'text_ref' => 'article_header',
-            'content' => 'Experience the Life@Work Culture Conference 2018',
+            'content' => 'Experience the Life@Work Culture Conference 2019',
             'label' => 'Main article header',
         ],
         4 => [
             'section_id' => '1',
             'text_ref' => 'article_text',
-            'content' => '<p>We had an inspiring group join us for our Life@Work Culture Conference in July 2016. Business and culture thought leaders connected deeply through thought-provoking discussions and community activities in the beautiful Hudson Valley.</p><p>Didn\'t make it this year? Email us directly at info@lifeatwork.co to request an invite for 2017. You can also get a taste of the two-day
+            'content' => '<p>We had an inspiring group join us for our Life@Work Culture Conference in July 2019. Business and culture thought leaders connected deeply through thought-provoking discussions and community activities in the beautiful Hudson Valley.</p><p>Didn\'t make it this year? Email us directly at info@lifeatwork.co to request an invite for 2019. You can also get a taste of the two-day
 hands-on learning experience by checking out the photos, and sign up for our newsletter to stay in the loop.</p>',
             'label' => 'Main article text',
     ],
@@ -138,7 +138,7 @@ hands-on learning experience by checking out the photos, and sign up for our new
         21 => [
             'section_id' => '3',
             'text_ref' => 'footer_slogan',
-            'content' => 'LIVE IN THE GREY &copy; 2018',
+            'content' => 'LIVE IN THE GREY &copy; 2019',
             'label' => 'Footer copyrights phrase 1',
         ],
         22 => [
