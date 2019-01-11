@@ -21,14 +21,18 @@
 
         <div id="app" class="flex-center position-ref full-height">
 
-            @include('layouts.header')
-
+            @if($controller != 'LoginController' && $controller != 'RegisterController' && $controller != 'AdminController' )
+                @include('layouts.header')
+            @endif
 
             @yield('content')
-
         </div>
 
         <script src="js/app.js"></script>
+
+        @if($controller == 'AdminController' )
+            @yield('custom_js')
+        @endif
 
     </body>
 </html>

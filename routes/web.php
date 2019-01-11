@@ -13,6 +13,9 @@
 
 Route::get('/', 'IndexController@index');
 
+Route::get('/admin', 'AdminController@index');
+Route::post('/admin', 'AdminController@store')->name('admin_post');
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');

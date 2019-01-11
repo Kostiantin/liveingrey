@@ -8240,7 +8240,7 @@ html.is-reveal-open body {
 }
 
 p {
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
 }
 
 #responsive-menu ul {
@@ -8319,7 +8319,8 @@ ul li.social-icons-container a i.fa {
 
 .sign-up-button-container a,
 a.red-custom-button,
-.footer-section-2 fieldset:last-child input[type="submit"] {
+.footer-section-2 fieldset:last-child input[type="submit"],
+button.admin-save {
   color: #ff7357;
   display: inline;
   width: auto;
@@ -8355,7 +8356,7 @@ a.red-custom-button:hover {
 
 .main-slogan h1 {
   font-size: 25px;
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
 }
 
 .sub-slogan {
@@ -8398,7 +8399,7 @@ a.red-custom-button:hover {
 }
 
 .mid-section-1 h3 {
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
 }
 
 /* mid section 1 end */
@@ -8437,7 +8438,7 @@ a.red-custom-button:hover {
   text-align: left;
   font-size: 20px;
   color: #fff;
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
 }
 
 .sub-header-text-holder {
@@ -8756,7 +8757,7 @@ a.brands:hover {
 
 .footer-section-2 h3,
 .footer-section-2 h4 {
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
 }
 
 .footer-section-2 h4 {
@@ -8825,7 +8826,7 @@ a.brands:hover {
   border-left: none;
   outline: none;
   color: #ff7357;
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   font-style: italic;
   background-color: #f9f9f9;
   -webkit-box-shadow: none;
@@ -9026,6 +9027,90 @@ label.special-checkbox-label {
 }
 
 /* mobile menu end*/
+
+/* login form */
+
+#custom-login-form {
+  margin-top: 120px;
+  background-color: #ff7357;
+  padding: 15px;
+}
+
+#custom-login-form h4.sub-header {
+  font-family: "Libre Baskerville", serif;
+  color: #fff;
+}
+
+.login-logo {
+  padding: 15px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+#custom-login-form label {
+  color: #fff;
+  font-family: "Libre Baskerville", serif;
+}
+
+#custom-login-form .invalid-feedback {
+  color: #fff;
+}
+
+/* login form end*/
+
+/* admin */
+
+.top-bar.admin {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.top-bar.admin li.menu-text {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#sections-tabs .tabs-title a {
+  color: #ff7357;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#sections-tabs .tabs-title.is-active a {
+  background-color: #ff7357;
+  color: #fff;
+}
+
+#sections-tabs textarea {
+  height: auto;
+}
+
+button.admin-save {
+  background-color: #ff7357;
+  color: #fff;
+  cursor: pointer;
+}
+
+button.admin-save:hover,
+button.admin-save:focus {
+  background-color: #313131;
+  border-color: #313131;
+}
+
+.admin-tabs-section .tabs-panel {
+  padding-bottom: 30px;
+}
+
+.admin-tabs-section .tabs-content {
+  margin-bottom: 40px;
+}
+
+.admin-tabs-section .tabs-content form label {
+  background-color: #eee;
+  padding-left: 5px;
+}
+
+/* admin end */
 
 /* responsive */
 

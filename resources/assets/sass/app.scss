@@ -13,7 +13,7 @@
 
 
 p {
-  font-family: 'Libre Baskerville', serif;
+  font-family: $special-font-family;
 }
 #responsive-menu ul {
   width: 100%;
@@ -75,7 +75,7 @@ ul li.social-icons-container a i.fa {
 .sign-up-button-container {
   padding-top: 12px;
 }
-.sign-up-button-container a, a.red-custom-button, .footer-section-2 fieldset:last-child input[type="submit"] {
+.sign-up-button-container a, a.red-custom-button, .footer-section-2 fieldset:last-child input[type="submit"], button.admin-save {
   color: $main-site-color;
   display: inline;
   width: auto;
@@ -105,7 +105,7 @@ ul li.social-icons-container a i.fa {
 }
 .main-slogan h1 {
   font-size: 25px;
-  font-family: 'Libre Baskerville', serif;
+  font-family: $special-font-family;
 }
 .sub-slogan {
   margin-top: 25px;
@@ -140,7 +140,7 @@ ul li.social-icons-container a i.fa {
   display: inline-block;
 }
 .mid-section-1 h3 {
-  font-family: 'Libre Baskerville', serif;
+  font-family: $special-font-family;
 }
 /* mid section 1 end */
 
@@ -173,7 +173,7 @@ ul li.social-icons-container a i.fa {
   text-align: left;
   font-size: 20px;
   color: #fff;
-  font-family: 'Libre Baskerville', serif;
+  font-family: $special-font-family;
 }
 .sub-header-text-holder {
   height: 40px;
@@ -440,7 +440,7 @@ a.brands:hover {
   color: $main-site-color;
 }
 .footer-section-2 h3,.footer-section-2 h4 {
-  font-family: 'Libre Baskerville', serif;
+  font-family: $special-font-family;
 }
 .footer-section-2 h4 {
   margin-bottom: 70px;
@@ -497,7 +497,7 @@ a.brands:hover {
   border-left: none;
   outline: none;
   color: $main-site-color;
-  font-family: 'Libre Baskerville', serif;
+  font-family: $special-font-family;
   font-style: italic;
   background-color: #f9f9f9;
   box-shadow: none;
@@ -646,6 +646,71 @@ label.special-checkbox-label {
   list-style-type: none;
 }
 /* mobile menu end*/
+
+/* login form */
+#custom-login-form {
+  margin-top: 120px;
+  background-color: $main-site-color;
+  padding: 15px;
+}
+#custom-login-form  h4.sub-header {
+  font-family: $special-font-family;
+  color: #fff;
+}
+.login-logo {
+  padding: 15px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+#custom-login-form label {
+  color: #fff;
+  font-family: $special-font-family;
+}
+#custom-login-form .invalid-feedback {
+  color: #fff;
+}
+/* login form end*/
+/* admin */
+.top-bar.admin {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.top-bar.admin li.menu-text {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+#sections-tabs .tabs-title a {
+  color: $main-site-color;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#sections-tabs .tabs-title.is-active a {
+  background-color: $main-site-color;
+  color: #fff;
+}
+#sections-tabs textarea {
+  height: auto;
+}
+button.admin-save {
+  background-color: $main-site-color;
+  color: #fff;
+  cursor: pointer;
+}
+button.admin-save:hover, button.admin-save:focus {
+  background-color: $custom-grey-color;
+  border-color: $custom-grey-color;
+}
+.admin-tabs-section .tabs-panel {
+  padding-bottom: 30px;
+}
+.admin-tabs-section .tabs-content {
+  margin-bottom: 40px;
+}
+.admin-tabs-section .tabs-content form label {
+  background-color: #eee;
+  padding-left: 5px;
+}
+/* admin end */
 /* responsive */
 @media (max-width: 1024px) {
   .custom-mobile-menu {

@@ -10,7 +10,7 @@ class PageSectionsTableSeeder extends Seeder
      *
      * @return void
      */
-    public static $aPageSections = ['Header', 'Middle', 'Footer',];
+    public static $aPageSections = ['Page Header', 'Middle of Page', 'Footer', 'General'];
 
     public function run()
     {
