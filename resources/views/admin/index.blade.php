@@ -112,7 +112,9 @@
             </div>
         </div>
     </div>
-
+    @if (Session::has('update_status'))
+        <div class="bottom-flash-message">{{ Session::get('update_status') }}</div>
+    @endif
 @endsection
 
 @section('custom_js')
@@ -120,5 +122,11 @@
         $( document ).ready(function() {
             $('#sections-tabs').foundation();
         });
+
+        if ($('.bottom-flash-message').length > 0) {
+            setTimeout(function(){
+                $('.bottom-flash-message').remove();
+            }, 3000);
+        }
     </script>
 @endsection

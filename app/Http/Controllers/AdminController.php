@@ -48,6 +48,8 @@ class AdminController extends Controller
             }
         }
 
+        $request->session()->flash('update_status', 'Successfully updated');
+
         return back();
     }
 }
