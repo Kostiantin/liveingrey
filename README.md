@@ -36,7 +36,7 @@ These instructions will get you a copy of the project up and running on your loc
      login: admin@admin.com  
      password: admin  
   
-7) Enjoy :)
+7) Continue developing :)
    
 ## Authors
 
