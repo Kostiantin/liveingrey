@@ -4,6 +4,7 @@ This is a promotion one page site based on Laravel 5.6 and Foundation 6.
 After installing, the site should look like this:  
   Home page:  
   ![home page](https://github.com/Kostiantin/liveingrey/blob/master/public/img/screenshots/LiveInTheGrey_1.png)  
+  Admin page:
   ![admin page](https://github.com/Kostiantin/liveingrey/blob/master/public/img/screenshots/LiveInTheGrey_2.png)  
 
 This project can be used as a quick start for a single page promotion site.  
