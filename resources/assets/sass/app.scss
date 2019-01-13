@@ -728,6 +728,10 @@ button.admin-save:hover, button.admin-save:focus {
   bottom: 8px;
   color: $main-site-color;
 }
+.restore-logo {
+  margin-bottom: 15px;
+  display: inline-block!important;;
+}
 /* admin end */
 /* responsive */
 @media (max-width: 1024px) {

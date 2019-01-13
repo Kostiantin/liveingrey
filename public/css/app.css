@@ -9130,6 +9130,11 @@ button.admin-save:focus {
   color: #ff7357;
 }
 
+.restore-logo {
+  margin-bottom: 15px;
+  display: inline-block !important;
+}
+
 /* admin end */
 
 /* responsive */

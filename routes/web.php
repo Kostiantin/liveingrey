@@ -13,6 +13,8 @@
 
 Route::get('/', 'IndexController@index');
 
+Route::get('/admin/setdefaultlogo', 'AdminController@setdefaultlogo')->name('restore_default_logo');
+
 Route::get('/admin', 'AdminController@index');
 Route::post('/admin', 'AdminController@store')->name('admin_post');
 

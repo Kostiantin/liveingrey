@@ -73,6 +73,7 @@
                                         <input type="hidden" value="{{$section->id}}" name="active_tab">
                                         <input type="hidden" name="user_id" value="{{$user->id}}"/>
 
+
                                         <h4>Logo</h4>
                                         <div class="form-group">
                                             <label for="logo"><strong>Perfect logo size is 250x28 pixels</strong></label>
@@ -81,6 +82,10 @@
                                                 <span class="help-block">
                                                     {{ $errors->first('logo') }}
                                                 </span>
+                                            @endif
+
+                                            @if(!empty($logoImg))
+                                                <a href="{{route('restore_default_logo')}}/?active_tab={{$section->id}}" class="red-custom-button restore-logo">Restore Default Logo</a>
                                             @endif
                                         </div>
 

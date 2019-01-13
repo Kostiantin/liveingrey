@@ -80,11 +80,6 @@ class AdminController extends Controller
                 ]);
             }
 
-            // redirect to custom link
-            /*if (empty($validatedNameAndMail) || (!empty($userTriedToChangePassword) && empty($validatedPassword)) || (!empty($userTriedToAddLogo) && empty($validatedLogo))) {
-                return redirect('/admin/?activeTab=' . (!empty($request['active_tab']) ? $request['active_tab'] : ''))->withInput();
-            }*/
-
             // update user data
             $userModel = User::find($request['user_id']);
 
@@ -145,5 +140,13 @@ class AdminController extends Controller
 
         return redirect('/admin/?activeTab=' . (!empty($request['active_tab']) ? $request['active_tab'] : ''));
 
+    }
+
+    public function setdefaultlogo(Request $request)
+    {
+        $logoModel = Setting::where('name', 'logo')->first();
+        $logoModel->value = '';
+        $logoModel->save();
+        return redirect('/admin/?activeTab=' . (!empty($request['active_tab']) ? $request['active_tab'] : ''));
     }
 }
