@@ -11,7 +11,7 @@ After installing, the site should look like this:
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-1) Pull the project;
+1) Get the copy of project;
 
 2) Install the local site and database;
 
