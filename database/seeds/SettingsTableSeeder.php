@@ -7,36 +7,42 @@ class SettingsTableSeeder extends Seeder
     public static $aSettings = [
         0 => [
             'name' => 'facebook',
-            'value' => '',
+            'label' => 'Facebook Link',
+            'value' => 'http://facebook.com',
             'content_type' => 'link',
             'active' => 1,
         ],
         1 => [
             'name' => 'instagram',
-            'value' => '',
+            'label' => 'Instagram Link',
+            'value' => 'http://instagram.com',
             'content_type' => 'link',
             'active' => 1,
         ],
         2 => [
-            'name' => 'titter',
-            'value' => '',
+            'name' => 'twitter',
+            'label' => 'Twitter Link',
+            'value' => 'http://twitter.com',
             'content_type' => 'link',
             'active' => 1,
         ],
         3 => [
             'name' => 'linkedin',
-            'value' => '',
+            'label' => 'LinkedIn Link',
+            'value' => 'http://linkedin.com',
             'content_type' => 'link',
             'active' => 1,
         ],
         4 => [
             'name' => 'pinterest',
-            'value' => '',
+            'label' => 'Pinterest Link',
+            'value' => 'http://pinterest.com',
             'content_type' => 'link',
             'active' => 1,
         ],
         5 => [
             'name' => 'logo',
+            'label' => 'Logo',
             'value' => '/img/logo.png',
             'content_type' => 'image',
             'active' => 1,
@@ -48,6 +54,7 @@ class SettingsTableSeeder extends Seeder
         foreach (self::$aSettings as $setting) {
             DB::table('settings')->insert([
                 'name' => $setting['name'],
+                'label' => $setting['label'],
                 'value' => $setting['value'],
                 'content_type' => $setting['content_type'],
                 'active' => $setting['active'],

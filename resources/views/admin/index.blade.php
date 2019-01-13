@@ -46,6 +46,7 @@
                                     <div class="tab-stuff">
                                         <form method="POST" action="{{route('admin_post')}}">
                                             @csrf
+                                            <input type="hidden" value="{{$section->id}}" name="active_tab">
                                             @foreach($content[$section->id] as $item)
                                                 <div class="form-group">
                                                     <label for="{{$item['text_ref']}}">{{$item['label']}}</label>
@@ -61,6 +62,8 @@
 
                                     <form method="POST" action="{{route('admin_post')}}">
                                         @csrf
+                                        <input type="hidden" value="{{$section->id}}" name="active_tab">
+                                        <h4>User Data</h4>
                                         <div class="form-group">
                                             <label for="name">Name</label>
 
@@ -90,15 +93,23 @@
                                         <div class="form-group">
                                             <label for="password">New Password</label>
 
-                                            <input id="password" type="password" class="form-control" name="password" required>
+                                            <input id="password" type="password" class="form-control" name="password">
 
                                             @if ($errors->has('password'))
                                                 <span class="help-block">
                                                     <strong>{{ $errors->first('password') }}</strong>
                                                 </span>
                                             @endif
-
                                         </div>
+
+
+                                        <h4>Social Links</h4>
+                                        @foreach($social_links as $link)
+                                            <div class="form-group">
+                                                <label for="social_link{{$link['id']}}">{{$link['label']}}:</label>
+                                                <input id="social_link{{$link['id']}}" type="text" name="social_link[{{$link['id']}}]" required value="{{$link['value']}}">
+                                            </div>
+                                        @endforeach
 
                                         <button class="admin-save" type="submit">SAVE</button>
 
@@ -119,14 +130,28 @@
 
 @section('custom_js')
     <script>
+
         $( document ).ready(function() {
+
+            var activeTab = '{{$activeTab}}';
+            // manually activate tabs
             $('#sections-tabs').foundation();
+
+            // after 3 seconds system removes flash update message from bottom
+            if ($('.bottom-flash-message').length > 0) {
+                setTimeout(function(){
+                    $('.bottom-flash-message').remove();
+                }, 3000);
+            }
+
+            // if activeTab exists in url we open it
+            $('#panel'+activeTab+'-label').click();
         });
 
-        if ($('.bottom-flash-message').length > 0) {
-            setTimeout(function(){
-                $('.bottom-flash-message').remove();
-            }, 3000);
-        }
+
+
+
+
+
     </script>
 @endsection

@@ -40,11 +40,9 @@
 
         <ul class="menu">
             <li class="social-icons-container text-left">
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                @foreach($social_links as $link)
+                    <a href="{{$link['value']}}"><i class="fa fa-{{$link['name']}}@if($link['name']=='pinterest')-p @endif" aria-hidden="true"></i></a>
+                @endforeach
             </li>
             <li class="logo-container text-center">
                 <a href="#">

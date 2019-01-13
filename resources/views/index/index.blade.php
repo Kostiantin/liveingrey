@@ -245,11 +245,9 @@
                         </a>
                     </li>
                     <li class="social-icons-container">
-                        <a href="#"><i aria-hidden="true" class="fa fa-facebook"></i></a>
-                        <a href="#"><i aria-hidden="true" class="fa fa-instagram"></i></a>
-                        <a href="#"><i aria-hidden="true" class="fa fa-twitter"></i></a>
-                        <a href="#"><i aria-hidden="true" class="fa fa-linkedin"></i></a>
-                        <a href="#"><i aria-hidden="true" class="fa fa-pinterest-p"></i></a>
+                        @foreach($social_links as $link)
+                            <a href="{{$link['value']}}"><i class="fa fa-{{$link['name']}}@if($link['name']=='pinterest')-p @endif" aria-hidden="true"></i></a>
+                        @endforeach
                     </li>
                     <li>
                         <span>{!!$content['footer_slogan']!!}</span> | <span>{{$content['design_by']}}</span>
