@@ -43,7 +43,7 @@ class SettingsTableSeeder extends Seeder
         5 => [
             'name' => 'logo',
             'label' => 'Logo',
-            'value' => '/img/logo.png',
+            'value' => '',
             'content_type' => 'image',
             'active' => 1,
         ],

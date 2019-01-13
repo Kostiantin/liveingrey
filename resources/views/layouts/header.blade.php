@@ -14,7 +14,7 @@
 <div class="custom-mobile-menu">
     <button class="menu-icon" type="button"></button>
     <a href="#">
-      <img class="mobile-logo" src="{{ asset('img/logo.png') }}" alt=""/>
+      <img class="mobile-logo" src="@if (empty($logoImg)) {{ asset('img/logo.png') }} @else {{asset('uploads/'.$logoImg)}} @endif" alt=""/>
     </a>
 </div>
 <div class="mobile-menu-content">
@@ -46,8 +46,10 @@
             </li>
             <li class="logo-container text-center">
                 <a href="#">
-                    <img class="main-logo" src="{{ asset('img/logo.png') }}" alt=""/>
-                    <img class="logo-grey" src="{{ asset('img/logo_grey.png') }}" alt=""/>
+                    <img class="main-logo" src="@if (empty($logoImg)) {{ asset('img/logo.png') }} @else {{asset('uploads/'.$logoImg)}} @endif" alt=""/>
+                    @if(empty($logoImg))
+                        <img class="logo-grey" src="{{ asset('img/logo_grey.png') }}" alt=""/>
+                    @endif
                 </a>
             </li>
             <li class="sign-up-button-container text-right">

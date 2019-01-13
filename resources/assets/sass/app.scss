@@ -723,6 +723,11 @@ button.admin-save:hover, button.admin-save:focus {
   font-size: 15px;
   text-align: center;
 }
+#user-and-social-links .help-block {
+  position: relative;
+  bottom: 8px;
+  color: $main-site-color;
+}
 /* admin end */
 /* responsive */
 @media (max-width: 1024px) {

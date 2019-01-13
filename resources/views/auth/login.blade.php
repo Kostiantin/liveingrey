@@ -8,7 +8,7 @@
             <div class="cell small-12 medium-5 large-3" id="custom-login-form">
                 <h4 class="sub-header text-center">Log In</h4>
                 <div class="login-logo text-center">
-                    <img class="main-logo" src="{{ asset('img/logo.png') }}" alt=""/>
+                    <img class="main-logo" src="@if (empty($logoImg)) {{ asset('img/logo.png') }} @else {{asset('uploads/'.$logoImg)}} @endif" alt=""/>
                 </div>
                 <form method="POST" action="{{ route('login') }}" aria-label="Login">
                     @csrf

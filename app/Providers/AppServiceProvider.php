@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use App\Setting;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,7 +26,13 @@ class AppServiceProvider extends ServiceProvider
 
             list($controller, $action) = explode('@', $controller);
 
-            $view->with(compact('controller', 'action'));
+
+            // GET LOGO
+            $logoModel = Setting::where('name', 'logo')->first();
+            $logoImg = $logoModel->value;
+
+
+            $view->with(compact('controller', 'action', 'logoImg'));
         });
     }
 

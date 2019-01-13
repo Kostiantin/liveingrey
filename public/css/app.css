@@ -9124,6 +9124,12 @@ button.admin-save:focus {
   text-align: center;
 }
 
+#user-and-social-links .help-block {
+  position: relative;
+  bottom: 8px;
+  color: #ff7357;
+}
+
 /* admin end */
 
 /* responsive */

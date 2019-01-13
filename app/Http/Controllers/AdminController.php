@@ -3,14 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use App\Content;
 use App\Section;
 use App\Setting;
 use App\User;
 
 
+
 class AdminController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -36,22 +41,91 @@ class AdminController extends Controller
         $social_links = Setting::where('content_type', 'link')->get()->toArray();
 
         // Choose active tab if it was set in the link
-
         $activeTab = 1;// first tab as default
         if (!empty($request['activeTab'])) {
             $activeTab = $request['activeTab'];
         }
 
-        return view('admin.index', compact('content', 'sections', 'user', 'social_links','activeTab'));
+        // GET LOGO
+        $logoModel = Setting::where('name', 'logo')->first();
+        $logoImg = $logoModel->value;
+
+        return view('admin.index', compact('content', 'sections', 'user', 'social_links','activeTab','logoImg'));
     }
 
     public function store(Request $request)
     {
-       /* $users = User::where('age', '<', 18)->get();
-        foreach ($users as $user) {
-            $user->field = value;
-            $user->save();
-        }*/
+
+        // save user data
+        if (!empty($request['user_id'])) {
+
+
+            // validate name and mail
+            $validatedNameAndMail = $this->validate($request, [
+                'name' => 'required|min:3|max:50',
+                'email' => 'required|email',
+            ]);
+
+            // validate password
+            if (!empty($request['password'])) {
+                $userTriedToChangePassword = true;
+                $validatedPassword = $this->validate($request, ['password' => 'confirmed|min:6']);
+            }
+
+            // validate logo
+            if ($request->hasFile('logo')) {
+                $userTriedToAddLogo = true;
+                $validatedLogo = $this->validate($request, [
+                    'logo' => 'image',
+                ]);
+            }
+
+            // redirect to custom link
+            /*if (empty($validatedNameAndMail) || (!empty($userTriedToChangePassword) && empty($validatedPassword)) || (!empty($userTriedToAddLogo) && empty($validatedLogo))) {
+                return redirect('/admin/?activeTab=' . (!empty($request['active_tab']) ? $request['active_tab'] : ''))->withInput();
+            }*/
+
+            // update user data
+            $userModel = User::find($request['user_id']);
+
+            $aData = [
+                'name' => $request['name'],
+                'email' => $request['email'],
+            ];
+
+            // if new password was set and valid
+            if (!empty($request['password'])) {
+                $aData['password'] = Hash::make($request['password']);
+            }
+
+            $userModel->update($aData);
+
+            // logo file update
+            if ($request->hasFile('logo')) {
+
+                $logo = $request->file('logo');
+
+                $fileNameWithExt = $logo->getClientOriginalName();
+
+                $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+                $extension = $logo->getClientOriginalExtension();
+
+                $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+
+                $destinationPath = public_path('/uploads');
+
+                $logo->move($destinationPath, $fileNameToStore);
+
+
+                $logoModel = Setting::where('name', 'logo')->first();
+                $logoModel->value = $fileNameToStore;
+                $logoModel->save();
+
+            }
+        }
+
+        // save front-end texts content
         if (!empty($request['content'])) {
             foreach($request['content'] as $id => $record_content) {
                 $contentModel = Content::find($id);
@@ -59,6 +133,7 @@ class AdminController extends Controller
             }
         }
 
+        // save social links
         if (!empty($request['social_link'])) {
             foreach($request['social_link'] as $id => $record_content) {
                 $social_linkModel = Setting::find($id);
@@ -68,7 +143,7 @@ class AdminController extends Controller
 
         $request->session()->flash('update_status', 'Successfully updated');
 
-        //return back();
         return redirect('/admin/?activeTab=' . (!empty($request['active_tab']) ? $request['active_tab'] : ''));
+
     }
 }

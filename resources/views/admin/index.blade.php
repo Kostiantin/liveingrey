@@ -13,7 +13,7 @@
                     <div class="top-bar-left">
                         <ul class="dropdown menu" data-dropdown-menu>
                             <li class="menu-text">
-                                <img class="main-logo" src="{{ asset('img/logo.png') }}" alt=""/>
+                                <img class="main-logo" src="@if (empty($logoImg)) {{ asset('img/logo.png') }} @else {{asset('uploads/'.$logoImg)}} @endif" alt=""/>
                             </li>
                         </ul>
                     </div>
@@ -34,7 +34,9 @@
 
                     <ul class="tabs" data-tabs id="sections-tabs">
                         @foreach($sections as $index => $section)
-                            <li class="tabs-title @if($index == 0)is-active @endif"><a href="#panel{{$section->id}}" aria-selected="true">{{$section->name}}</a></li>
+                            <li class="tabs-title @if($index == 0)is-active @endif">
+                                <a href="#panel{{$section->id}}" aria-selected="true">{{$section->name}}</a>
+                            </li>
                         @endforeach
                     </ul>
 
@@ -42,6 +44,8 @@
                         @foreach($sections as $index => $section)
                             <div class="tabs-panel @if($index == 0)is-active @endif" id="panel{{$section->id}}">
                                 <h3>{{$section->name}}</h3>
+
+                                <!-- TABS FOR FRONT END CONTENT TEXTS -->
                                 @if(!empty($content[$section->id]))
                                     <div class="tab-stuff">
                                         <form method="POST" action="{{route('admin_post')}}">
@@ -58,33 +62,50 @@
                                         </form>
                                     </div>
                                 @endif
+
+                                <!-- GENERAL TAB CONTENT -->
                                 @if($section->name == 'General')
 
-                                    <form method="POST" action="{{route('admin_post')}}">
+                                    <form method="POST" action="{{route('admin_post')}}" id="user-and-social-links" enctype="multipart/form-data">
+
                                         @csrf
+
                                         <input type="hidden" value="{{$section->id}}" name="active_tab">
+                                        <input type="hidden" name="user_id" value="{{$user->id}}"/>
+
+                                        <h4>Logo</h4>
+                                        <div class="form-group">
+                                            <label for="logo"><strong>Perfect logo size is 250x28 pixels</strong></label>
+                                            <input type="file" class="form-control-file" name="logo" id="logo" aria-describedby="fileHelp">
+                                            @if ($errors->has('logo'))
+                                                <span class="help-block">
+                                                    {{ $errors->first('logo') }}
+                                                </span>
+                                            @endif
+                                        </div>
+
+
                                         <h4>User Data</h4>
+
                                         <div class="form-group">
                                             <label for="name">Name</label>
 
-                                            <input id="name" type="text" class="form-control" name="name" value="{{ $user->name }}" required autofocus>
-
+                                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name',$user->name) }}" required autofocus>
                                             @if ($errors->has('name'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('name') }}</strong>
+                                                    {{ $errors->first('name') }}
                                                 </span>
                                             @endif
-
                                         </div>
 
                                         <div class="form-group">
                                             <label for="email">Email</label>
 
-                                            <input id="email" type="email" class="form-control" name="email" value="{{ $user->email }}" required autofocus>
+                                            <input id="email" type="text" class="form-control" name="email" value="{{ old('email',$user->email) }}" required autofocus>
 
                                             @if ($errors->has('email'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                   {{ $errors->first('email') }}
                                                 </span>
                                             @endif
 
@@ -93,17 +114,24 @@
                                         <div class="form-group">
                                             <label for="password">New Password</label>
 
-                                            <input id="password" type="password" class="form-control" name="password">
+                                            <input id="password" type="password" class="form-control" name="password" value="{{old('password','')}}">
 
                                             @if ($errors->has('password'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                    {{ $errors->first('password') }}
                                                 </span>
                                             @endif
                                         </div>
+                                        <div class="form-group row">
+                                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
 
+                                            <div class="col-md-6">
+                                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" value="{{old('password_confirmation','')}}">
+                                            </div>
+                                        </div>
 
                                         <h4>Social Links</h4>
+
                                         @foreach($social_links as $link)
                                             <div class="form-group">
                                                 <label for="social_link{{$link['id']}}">{{$link['label']}}:</label>
@@ -133,9 +161,17 @@
 
         $( document ).ready(function() {
 
-            var activeTab = '{{$activeTab}}';
+
             // manually activate tabs
             $('#sections-tabs').foundation();
+
+            var activeTab = '{{$activeTab}}';
+
+            if ($('#user-and-social-links .help-block').length > 0) {
+                //tabs-panel
+                activeTab = $('#user-and-social-links').parent().attr('id').replace('panel','');
+
+            }
 
             // after 3 seconds system removes flash update message from bottom
             if ($('.bottom-flash-message').length > 0) {
