@@ -18,7 +18,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 3) Change file .env.example to .env. Inside it assign database and connection credentials (user/password);
 
-4) Run commands:  
+4) Run commands (in your Terminal or Command Line):  
      
      composer install  
      php artisan key:generate  
