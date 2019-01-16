@@ -138,7 +138,7 @@ class AdminController extends Controller
 
         $request->session()->flash('update_status', 'Successfully updated');
 
-        return redirect('/admin/?activeTab=' . (!empty($request['active_tab']) ? $request['active_tab'] : ''));
+        return redirect('/admin/' . (!empty($request['active_tab']) ? '?activeTab='.$request['active_tab'] : ''));
 
     }
 
@@ -147,6 +147,6 @@ class AdminController extends Controller
         $logoModel = Setting::where('name', 'logo')->first();
         $logoModel->value = '';
         $logoModel->save();
-        return redirect('/admin/?activeTab=' . (!empty($request['active_tab']) ? $request['active_tab'] : ''));
+        return redirect('/admin/' . (!empty($request['active_tab']) ? '?activeTab='.$request['active_tab'] : ''));
     }
 }

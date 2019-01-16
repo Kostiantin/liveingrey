@@ -172,6 +172,7 @@
 
             var activeTab = '{{$activeTab}}';
 
+            // if any form in the tab has error (help-block) then we choose this tab and jump to it
             if ($('#user-and-social-links .help-block').length > 0) {
                 //tabs-panel
                 activeTab = $('#user-and-social-links').parent().attr('id').replace('panel','');
@@ -188,11 +189,6 @@
             // if activeTab exists in url we open it
             $('#panel'+activeTab+'-label').click();
         });
-
-
-
-
-
 
     </script>
 @endsection

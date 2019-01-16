@@ -19,9 +19,7 @@ class IndexController extends Controller
         })->toArray();
 
         // get social links
-
         $social_links = Setting::where('content_type', 'link')->get()->toArray();
-
 
         return view('index.index', compact('content', 'social_links'));
     }

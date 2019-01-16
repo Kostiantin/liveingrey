@@ -9148,6 +9148,14 @@ button.admin-save:focus {
     display: block;
   }
 
+  .sub-slogan {
+    font-size: 25px;
+  }
+
+  .main-slogan h1 {
+    font-size: 25px;
+  }
+
   #responsive-menu {
     display: none;
   }
